@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.a6_dogapp.R
 import com.example.a6_dogapp.databinding.FragmentDetailsBinding
 import com.example.a6_dogapp.model.DogBreed
+import com.squareup.picasso.Picasso
 import java.io.Serializable
 
 class DetailsFragment : Fragment() {
@@ -30,6 +31,7 @@ class DetailsFragment : Fragment() {
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_details, null, false)
         val viewRoot: View = binding.root
         binding.dog = dogBreed
+        Picasso.get().load(dogBreed.url).into(binding.imgAvatar)
         return viewRoot
     }
 }
